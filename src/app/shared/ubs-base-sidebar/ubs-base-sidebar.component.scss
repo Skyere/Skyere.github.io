@@ -1,0 +1,133 @@
+.main {
+  position: relative;
+  display: grid;
+
+  .active {
+    background-color: var(--ubs-secondary-grey);
+  }
+
+  .sidebar {
+    .sidebar-container {
+      margin-left: 25px;
+      width: calc(100% - 100px);
+    }
+
+    .sidebar-slider {
+      position: fixed;
+      top: 80px;
+      background-color: var(--ubs-primary-grey);
+      width: 228px;
+    }
+  }
+
+  .main-content {
+    margin-top: 120px;
+    overflow-x: hidden;
+    min-height: 345px;
+  }
+
+  .sidebar-list {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    text-align: center;
+    color: var(--ubs-primary-white);
+
+    .sidebar-list-item {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+      cursor: pointer;
+      padding: 15px 39px 15px 15px;
+    }
+  }
+
+  .sidebar-list-item-link {
+    color: var(--ubs-primary-white);
+    font-family: var(--primary-font);
+    font-size: 16px;
+    line-height: 24px;
+    text-decoration: none;
+  }
+
+  .sidebar-icons {
+    position: fixed;
+    width: 59px;
+    height: 100%;
+    top: 80px;
+    background-color: var(--ubs-primary-grey);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+
+  .toggle-arrow {
+    display: flex;
+    padding: 7px;
+  }
+
+  .mobile-sidebar {
+    display: none;
+  }
+
+  .count-unread-messages {
+    color: var(--ubs-primary-white);
+    margin: 0 -25px 0 -10px;
+  }
+
+  @media (max-width: 480px) {
+    .mobile-sidebar {
+      display: block;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      color: var(--ubs-grey-white);
+      z-index: 4;
+      background-color: var(--ubs-primary-grey);
+
+      .sidebar-list {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        .sidebar-list-item-mobile {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          cursor: pointer;
+          width: 25%;
+          padding: 9px;
+        }
+
+        .sidebar-list-item-text {
+          display: flex;
+          margin-top: 6px;
+          font-size: 10px;
+          line-height: 12px;
+        }
+      }
+    }
+
+    .main-content {
+      margin-top: 80px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .sidebar {
+      .sidebar-container {
+        width: 100%;
+        margin-bottom: 125px;
+      }
+
+      .sidebar-slider {
+        display: none;
+      }
+    }
+
+    .sidebar-icons {
+      display: none;
+    }
+  }
+}

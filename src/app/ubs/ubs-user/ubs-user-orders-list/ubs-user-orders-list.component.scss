@@ -1,0 +1,240 @@
+::ng-deep {
+  .mat-tab-label-content {
+    font-size: 20px;
+  }
+
+  .mat-tab-labels .mat-tab-label-active {
+    .mat-tab-label-content {
+      color: var(--ubs-button-light-green);
+    }
+  }
+
+  .mat-tab-group.mat-primary .mat-ink-bar,
+  .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: var(--primary-green);
+  }
+}
+
+.mat-expansion-panel-header {
+  height: 64px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 0 17px;
+}
+
+.header_list {
+  display: grid;
+  grid-template-columns: repeat(6, 109px);
+  column-gap: 1.7vw;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  margin-left: 17px;
+
+  .header_list-num,
+  .header_list-paymentStatus,
+  .header_list-paymentAmount,
+  .header_list-status,
+  .header_list-paymentDate,
+  .header_list-date {
+    line-height: 20px;
+    font-style: normal;
+  }
+
+  .header_list-date {
+    padding-left: 0.4vw;
+  }
+
+  .header_list-paymentStatus {
+    padding-right: 0.4vw;
+  }
+
+  .header_list-paymentDate {
+    padding-left: 0.3vw;
+  }
+
+  div {
+    width: 120px;
+    flex: auto;
+  }
+
+  .empty-div {
+    width: 300px;
+  }
+}
+
+.mat-content-wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, 109px);
+  column-gap: 1.57vw;
+}
+
+.btn-space {
+  display: flex;
+  width: 30%;
+}
+
+.btns_group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 30px;
+
+  .btn_grid_cancel,
+  .btn_grid_pay,
+  .btn_grid_fake {
+    width: 114px;
+    margin: 0 20px 0 0;
+
+    .btn_pay {
+      height: 36px;
+      width: 114px;
+      border: none;
+      color: var(--ubs-primary-white);
+      padding: 8px 20px 8px 20px;
+      background: var(--ubs-button-light-green);
+      border-radius: 4px;
+    }
+
+    .btn_cancel {
+      height: 36px;
+      width: 114px;
+      color: var(--ubs-quaternary-dark-grey);
+      background: var(--ubs-primary-white);
+      border: 1px solid var(--ubs-primary-green);
+      border-radius: 4px;
+    }
+
+    .btn_fake {
+      display: none;
+    }
+  }
+
+  .btn_grid_order {
+    margin: 0 20px 0 64px;
+
+    .btn_order {
+      height: 36px;
+      color: var(--ubs-button-light-green);
+      border: 1px solid var(--ubs-button-light-green);
+      padding: 8px 24px 8px 24px;
+      background: var(--ubs-primary-white);
+      border-radius: 4px;
+    }
+  }
+}
+
+.mat-expansion-panel {
+  margin: 10px 0 10px 0;
+  box-shadow: none;
+}
+
+.mat-expansion-panel-header-title {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  flex: 1 1 80px;
+}
+
+.mat-expansion-panel-header-description {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  flex: 1 1 117px;
+}
+
+.description {
+  box-sizing: border-box;
+  background-color: #fff;
+  padding: 10px;
+}
+
+@media (max-width: 1060px) {
+  .header_list {
+    font-size: 12px;
+    font-weight: 500;
+
+    .btns_group {
+      flex-direction: column;
+    }
+  }
+
+  .mat-expansion-panel-header {
+    height: 64px !important;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 920px) {
+  .header_list {
+    font-size: 12px;
+    font-weight: 500;
+
+    .header_list-date,
+    .header_list-status {
+      display: none;
+    }
+  }
+
+  .mat-expansion-panel-header {
+    height: 64px !important;
+    font-size: 13px;
+  }
+
+  .order_list-date,
+  .order_list-status {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  ::ng-deep {
+    .mat-content {
+      display: flex;
+      flex-direction: column !important;
+    }
+  }
+
+  .mat-expansion-panel-header {
+    height: 100px !important;
+  }
+
+  .btns_group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 10px 0 0 45px;
+
+    button {
+      max-width: 114px;
+    }
+  }
+
+  .empty-div {
+    display: none;
+  }
+}
+
+@media (width: 820px) {
+  .header_list-date,
+  .header_list-status {
+    display: none;
+  }
+
+  .order_list-date,
+  .order_list-status {
+    display: none;
+  }
+}
+
+@media (max-width: 375px) {
+  .description {
+    overflow-x: auto;
+  }
+
+  .btns_group {
+    margin: 10px 0 0 30px;
+  }
+}

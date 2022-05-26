@@ -1,0 +1,132 @@
+<form [formGroup]="locationForm">
+  <div *ngIf="this.data.headerText === 'addTemplate'" class="w-100">
+    <p class="add-location-title">{{ 'ubs-tariffs-add-location-pop-up.title' | translate }}</p>
+  </div>
+  <app-dialog-tariff [row]="form" [newDate]="newDate" [name]="name"></app-dialog-tariff>
+  <ng-template #form>
+    <div class="d-flex first-row">
+      <div>
+        <div class="form-group">
+          <label>{{ 'ubs-tariffs-add-location-pop-up.region' | translate }}</label>
+          <input
+            ngx-google-places-autocomplete
+            type="text"
+            [ngClass]="{ 'error-input': regionExist }"
+            class="shadow-none form-control"
+            required
+            [options]="regionOptions"
+            formControlName="region"
+            placeholder="{{ 'ubs-tariffs-add-location-pop-up.placeholder_region' | translate }}"
+            (onAddressChange)="onRegionSelected($event)"
+          />
+          <img
+            *ngIf="region.value.length"
+            [src]="icons.cross"
+            class="cross-img"
+            alt="close-icon"
+            (click)="region.setValue(''); regionSelected = false"
+          />
+        </div>
+        <div class="w-100" *ngIf="regionExist">
+          <p class="validation">{{ 'ubs-tariffs-add-location-pop-up.error_message' | translate }}</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{ 'ubs-tariffs-add-location-pop-up.region' | translate }}</label>
+        <input
+          type="text"
+          class="shadow-none form-control"
+          required
+          formControlName="englishRegion"
+          placeholder="{{ 'ubs-tariffs-add-location-pop-up.placeholder_region' | translate }}"
+          [attr.disabled]="locationForm.controls['region'].dirty ? null : true"
+        />
+        <img
+          *ngIf="englishRegion.value.length"
+          [src]="icons.cross"
+          class="cross-img"
+          alt="close-icon"
+          (click)="englishRegion.setValue('')"
+        />
+      </div>
+    </div>
+    <mat-expansion-panel *ngIf="cities.length">
+      <mat-expansion-panel-header [collapsedHeight]="'20px'" [expandedHeight]="'20px'">
+        <mat-panel-title>
+          {{ 'ubs-tariffs-add-location-pop-up.activeCities' | translate }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <div *ngFor="let item of cities" class="itemList">
+        {{ item }}
+      </div>
+    </mat-expansion-panel>
+    <div class="d-flex">
+      <div>
+        <div class="form-group">
+          <label>{{ 'ubs-tariffs-add-location-pop-up.locality' | translate }}</label>
+          <input
+            #locationInput
+            class="shadow-none form-control mb-1"
+            [ngClass]="{ 'error-input': cityExist }"
+            formControlName="location"
+            placeholder="{{ 'ubs-tariffs-add-location-pop-up.placeholder_location' | translate }}"
+            [attr.disabled]="locationForm.controls['region'].dirty ? null : true"
+            (keyup.enter)="addCity()"
+          />
+          <img
+            *ngIf="location.value.length"
+            [src]="icons.cross"
+            class="cross-img"
+            alt="close-icon"
+            (click)="location.setValue(''); citySelected = false"
+          />
+        </div>
+        <div class="w-100" *ngIf="cityExist">
+          <p class="validation-city">{{ 'ubs-tariffs-add-location-pop-up.city_error_message' | translate }}</p>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>{{ 'ubs-tariffs-add-location-pop-up.locality' | translate }}</label>
+        <input
+          class="shadow-none form-control mb-1"
+          formControlName="englishLocation"
+          placeholder="{{ 'ubs-tariffs-add-location-pop-up.placeholder_location' | translate }}"
+          [attr.disabled]="locationForm.controls['region'].dirty ? null : true"
+        />
+        <img
+          *ngIf="englishLocation.value.length"
+          [src]="icons.cross"
+          class="cross-img"
+          alt="close-icon"
+          (click)="englishLocation.setValue('')"
+        />
+      </div>
+    </div>
+    <div class="d-flex">
+      <div class="add-city" (click)="addCity()">{{ 'ubs-tariffs-add-location-pop-up.add-city' | translate }}</div>
+    </div>
+    <div class="mb-2">
+      <div *ngFor="let item of selectedCities; let index = index">
+        <div class="d-flex">
+          <div class="itemList">{{ item.location }}</div>
+          <img [src]="icons.cross" class="delete-button-img" alt="edit-icon" (click)="deleteCity(index)" />
+          <div class="itemList">{{ item.englishLocation }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-end buttons" mat-dialog-actions>
+      <button class="secondary-global-button btn m-0 mr-2" mat-button (click)="onNoClick()">
+        {{ 'ubs-tariffs-add-location-pop-up.cancel_button' | translate }}
+      </button>
+      <button
+        *ngIf="this.data.headerText === 'addTemplate'"
+        class="primary-global-button btn m-0"
+        [disabled]="locationForm.invalid || selectedCities.length === 0"
+        (click)="addLocation()"
+      >
+        {{ 'ubs-tariffs-add-location-pop-up.add_button' | translate }}
+      </button>
+    </div>
+  </ng-template>
+</form>
