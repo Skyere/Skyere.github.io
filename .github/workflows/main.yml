@@ -44,8 +44,8 @@ jobs:
       - name: CSS Linter
         run: npm run stylelint
 
-      - name: Unit Tests
-        run: npx ng test --watch=false --progress=false --codeCoverage=true --browsers=ChromeHeadless
+#       - name: Unit Tests
+#         run: npx ng test --watch=false --progress=false --codeCoverage=true --browsers=ChromeHeadless
 
       - name: E2E Tests
         run: npx ng e2e --protractor-config=e2e/protractor-ci.conf.js
