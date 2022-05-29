@@ -9,6 +9,7 @@ trigger:
 
 variables:
   agentOS: ubuntu-latest
+  docker_repo: skyere/greencity-front
 
 stages:
 - stage: Build
@@ -17,9 +18,22 @@ stages:
     pool:
       vmImage: $(agentOS)
     steps:
+
     - task: Docker@2
       inputs:
         containerRegistry: 'Dockerhub_Skyere'
-        repository: 'skyere/greencity-front'
-        command: 'buildAndPush'
-        Dockerfile: 'Dockerfile'    
+        repository: '$(docker_repo)'
+        command: 'build'
+        Dockerfile: 'Dockerfile'
+        tags: |
+          $(Build.BuildId)
+          latest
+    
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'Dockerhub_Skyere'
+        repository: '$(docker_repo)'
+        command: 'push'
+        tags: |
+          $(Build.BuildId)
+          latest
