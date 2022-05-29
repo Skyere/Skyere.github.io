@@ -1,4 +1,5 @@
 # Node.js
+
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -24,3 +25,9 @@ steps:
     npx ng build --prod --delete-output-path --base-href=/GreenCityClient/ --outputPath=dist_aot && rm -rf dist_aot
     npx ng build --prod --base-href=/GreenCityClient/ --aot=false --build-optimizer=false
   displayName: 'npm install and build'
+
+- task: DownloadFileshareArtifacts@1
+  inputs:
+    filesharePath: 'GreenCityClient/'
+    artifactName: '**'
+    downloadPath: '$(System.ArtifactsDirectory)'
