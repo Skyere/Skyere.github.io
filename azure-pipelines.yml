@@ -27,7 +27,7 @@ stages:
         Dockerfile: 'Dockerfile'
         tags: |
           $(Build.BuildId)
-          latest
+          release
     
     - task: Docker@2
       inputs:
@@ -36,4 +36,4 @@ stages:
         command: 'push'
         tags: |
           $(Build.BuildId)
-          latest
+          release
