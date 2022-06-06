@@ -2,13 +2,14 @@ export interface EventDTO {
   title: string;
   description: string;
   open: boolean;
-  dates: Array<Dates>;
+  datesLocations: Array<Dates>;
+  tags: Array<string>;
 }
 
 export interface Dates {
-  startDate: Array<number>;
-  finishDate: Array<number>;
-  coordinatesDto: {
+  startDate: string;
+  finishDate: string;
+  coordinates: {
     latitude: number;
     longitude: number;
   };
@@ -16,7 +17,7 @@ export interface Dates {
 }
 
 export interface DateEvent {
-  date: string;
+  date: Date;
   startDate: string;
   finishDate: string;
   coordinatesDto: {
@@ -24,6 +25,8 @@ export interface DateEvent {
     longitude: number;
   };
   onlineLink: string;
+  valid: boolean;
+  check: boolean;
 }
 
 export interface Coords {
@@ -46,6 +49,7 @@ export interface EventImage {
 }
 
 export interface EventResponseDto {
+  currentPage: number;
   first: boolean;
   hasNext: boolean;
   hasPrevious: boolean;
@@ -58,32 +62,57 @@ export interface EventResponseDto {
 
 export interface EventPageResponceDto {
   additionalImages: Array<string>;
-  coordinates: {
-    latitude: number;
-    longitude: number;
-  };
   dates: Array<DateEventResponceDto>;
   description: any;
   id: number;
-  onlineLink: string;
   open: boolean;
   organizer: {
     id: number;
     name: string;
   };
+  tags: Array<TagDto>;
   title: string;
   titleImage: string;
 }
 
+export interface TagDto {
+  id: number;
+  nameUa: string;
+  nameEn: string;
+}
 export interface DateEventResponceDto {
-  eventDto: string;
+  coordinates: {
+    latitude: number;
+    longitude: number;
+  };
+  event: string;
   finishDate: string;
   id: number;
+  onlineLink: string;
   startDate: string;
 }
 
-export interface OnlineOflineDto {
+export interface OfflineDto {
   latitude: number;
   longitude: number;
-  onlineLink: string;
+}
+
+export interface TagObj {
+  nameUa: string;
+  nameEn: string;
+  isActive: boolean;
+}
+
+export interface DateFormObj {
+  date: Date;
+  endTime?: string;
+  onlineLink?: string;
+  place: string;
+  startTime?: string;
+}
+
+export interface PaginationInterface {
+  itemsPerPage: number;
+  currentPage: number;
+  totalItems: number;
 }
