@@ -1,7 +1,7 @@
 {
   "input-error": {
     "required": "This field is required.",
-    "email-wrong": "Enter the correct email.",
+    "email-wrong": "Please enter the correct email.",
     "number-wrong": "Enter the correct phone number",
     "minlength-short": "The field contains insufficient characters.",
     "max-length": "Maximum number of characters exceeded.",
@@ -112,7 +112,7 @@
     "subtitle-second": "number of extras to the UBS Courier, provided that you meet the following simple conditions:",
     "aluminum": "aluminum cans (put in a separate sack/bag and tie);",
     "metal": "household metal (it always tears plastic bags, so it is better to give it in a sack/box);",
-    "bottles": "Transparent PET bottles used for drinks (put in a separate sack/bag and tie);",
+    "bottles": "transparent PET bottles used for drinks (put in a separate sack/bag and tie);",
     "cardboard": "corrugated cardboard (separate the tape, stickers and all metal staples, and to make it easy to transport, fold it so that it is flat);",
     "polyfoam": "polyfoam (only if the volume of the package does not exceed 120l per export).",
     "condition1": "When ordering the service, indicate that you plan to give the Courier free items, as well as their volume.",
@@ -231,10 +231,11 @@
       "preparing": {
         "caption": "How to prepare?",
         "content": {
-          "li_1": "Check out our Rules of sorting wastes (link).",
-          "li_2": "Everything you give to the Courier needs to be clean and dry – it’s a must-have.",
+          "li_1": "Check out our Rules of sorting wastes",
+          "li_1.1": "link",
+          "li_2": "Everything you give to the Courier needs to be clean and dry – it’s MUST HAVE.",
           "li_3": "Recyclables and non-recyclable plastics can be put together in one package/sack of a 120 liters size - we will re-sort everything.",
-          "li_4": "We accept textile wastes (damaged clothes) for the utilization in separate packages of 120l or 20l.",
+          "li_4": "We accept textile wastes (damaged clothes) for the utilization in separate packages of 120l size or 20l size.",
           "li_5": "1 package/sack should be up to 30 kg.",
           "li_6": "If you don't have a package/sack of the necessary size, you can get it right from the Courier or order a whole roll in our store and pack the wastes beforehand to save a lot of time.",
           "li_7": "The Courier picks up at least 2 packages within Kyiv. Driving a long distance for only 1 package is not environmentally friendly, and it significantly increases the waiting time for each customer. If you live within a radius of 20 km from Kyiv, the Courier takes out 20 packages of 120l.",
@@ -281,8 +282,9 @@
           "pre_2": "Courier waiting time is 2-9 business days."
         },
         "content": {
-          "pre_1": "Along with the export of recyclable materials, you can also order eco-goods from our NoWaste Shop.",
-          "pre_2": "Delivery of goods is free of charge for UBS Courier customers."
+          "pre_1": "Along with the export of recyclable materials, you can also order eco-goods from our ",
+          "pre_2": "Delivery of goods is free of charge for UBS Courier customers.",
+          "link": "NOWASTE Shop."
         },
         "button": "Order Courier"
       }
