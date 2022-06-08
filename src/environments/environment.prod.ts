@@ -5,7 +5,7 @@ export const environment = {
   backendLink: 'https://greencity.testgreencity.ga/',
   backendChatLink: 'https://greencity-chat.testgreencity.ga/',
   backendUserLink: 'https://greencity-user.testgreencity.ga/',
-  backendUbsLink: 'https://greencity-ubs-prod.azurewebsites.net',
+  backendUbsLink: 'https://greencity-ubs.testgreencity.ga',
   frontendLink: 'https://greencity-front.testgreencity.ga/GreenCityClient/',
   socket: 'https://greencity.testgreencity.ga/socket',
   chatSocket: 'https://greencity-chat.testgreencity.ga/socket',
@@ -23,6 +23,6 @@ export const environment = {
     backendEmployeesLink: 'https://greencity-ubs-prod.azurewebsites.net/admin/ubs-employee/getAll-active-employees',
     backendUbsAdminLink: 'https://greencity-ubs-prod.azurewebsites.net/ubs'
   },
-  googleClientId: '129513550972-eu9ej46rviv1ac8q14at62t2k5qon1pu.apps.googleusercontent.com',
+  googleClientId: '509138864931-1g8ldp69hjueldge0s4lfo98g8ktvmhi.apps.googleusercontent.com',
   agmCoreModuleApiKey: 'AIzaSyCdBtR8O8eazfWUSdyb5O2cnL32uJtWUwA'
 };
