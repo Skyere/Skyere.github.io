@@ -20,8 +20,8 @@ export const environment = {
     measurementId: 'G-CCHRKQ4R0S'
   },
   ubsAdmin: {
-    backendEmployeesLink: 'https://greencity-ubs-prod.azurewebsites.net/admin/ubs-employee/getAll-active-employees',
-    backendUbsAdminLink: 'https://greencity-ubs-prod.azurewebsites.net/ubs'
+    backendEmployeesLink: 'https://greencity-ubs.testgreencity.ga/admin/ubs-employee/getAll-active-employees',
+    backendUbsAdminLink: 'https://greencity-ubs.testgreencity.ga/ubs'
   },
   googleClientId: '509138864931-1g8ldp69hjueldge0s4lfo98g8ktvmhi.apps.googleusercontent.com',
   agmCoreModuleApiKey: 'AIzaSyCdBtR8O8eazfWUSdyb5O2cnL32uJtWUwA'
