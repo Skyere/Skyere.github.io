@@ -35,7 +35,7 @@ stages:
       inputs:
         command: 'custom'
         workingDir: '.'
-        customCommand: 'build-prod'
+        customCommand: 'run build-prod'
 
     - task: Docker@2
       inputs:
