@@ -35,7 +35,7 @@ stages:
       inputs:
         command: 'custom'
         workingDir: '.'
-        customCommand: 'run build --prod --base-href=/GreenCityClient/'
+        customCommand: 'run build-prod'
 
     - task: Docker@2
       inputs:
