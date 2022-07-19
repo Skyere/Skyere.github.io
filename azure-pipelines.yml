@@ -53,16 +53,3 @@ stages:
         command: 'push'
         tags: |
           test-$(Build.BuildId)
-
-    - task: CopyFiles@2
-      displayName: Copy Files
-      inputs:
-        SourceFolder: '$(system.defaultworkingdirectory)/greencity-client-chart'
-        Contents: '**'
-        TargetFolder: '$(build.artifactstagingdirectory)/greencity-client-chart'
-    
-    - task: PublishBuildArtifacts@1
-      displayName: Publish Artifact
-      inputs:
-        PathtoPublish: '$(build.artifactstagingdirectory)'
-        artifactName: '$(artifactName)'
